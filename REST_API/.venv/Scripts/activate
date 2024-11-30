@@ -39,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "C:\Users\Janeor\Desktop\Tesis\Back\Api-word2vec\REST_API\.venv")
+    export VIRTUAL_ENV=$(cygpath "C:\Users\Janeor\Desktop\Tesis\Back_Proyect\Busqueda-Biblica-Api-word2vec\REST_API\.venv")
 else
     # use the path as-is
-    export VIRTUAL_ENV="C:\Users\Janeor\Desktop\Tesis\Back\Api-word2vec\REST_API\.venv"
+    export VIRTUAL_ENV="C:\Users\Janeor\Desktop\Tesis\Back_Proyect\Busqueda-Biblica-Api-word2vec\REST_API\.venv"
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"

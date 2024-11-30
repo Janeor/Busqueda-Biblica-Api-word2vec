@@ -3,13 +3,13 @@ from flask import Flask, jsonify, request
 from gensim.models import KeyedVectors , Word2Vec
 import os
 
-model_path = "model/modelo_w2v1.bin"
+model_path = "model/Reina_Valeria.bin"
 app = Flask(__name__)
 
 # Cargar el modelo una vez al inicio
 model = None
 try:
-    model = Word2Vec.load(model_path)
+    model = KeyedVectors.load_word2vec_format(model_path, binary=True)
     print("Modelo cargado exitosamente")
 except FileNotFoundError:
     print(f"Error: No se encontró el archivo {model_path}.")
@@ -26,7 +26,7 @@ def word2vec1():
         return jsonify({"error": "No se proporcionó una palabra"}), 400
 
     try:
-        similar_words = model.wv.most_similar(positive=[word], topn=10)
+        similar_words = model.most_similar(positive=[word], topn=10)
         return jsonify(similar_words)
     except KeyError:
         return jsonify({"error": f"La palabra '{word}' no se encuentra en el vocabulario del modelo"}), 400
