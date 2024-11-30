@@ -9,3 +9,6 @@ API para el funcionamiento de la pagina web de busqueda de versiculos biblicos d
 
 # Probar funcionamiento
 http://127.0.0.1:5000/?word=dios
+
+#Pagina del Front
+https://github.com/Janeor/Buscador_Biblia_AT-NT
